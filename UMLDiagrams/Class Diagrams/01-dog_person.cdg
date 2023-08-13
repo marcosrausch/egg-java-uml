@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="domain">
+  <ClassDiagramComponents>
+    <Class name="Dog" package="domain" visibility="public" xPosition="265.0" yPosition="69.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="breed" type="Breed" visibility="private"/>
+        <Field name="age" type="short" visibility="private"/>
+        <Field name="size" type="short" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="Breed" name="breed"/>
+          <Argument type="short" name="age"/>
+          <Argument type="short" name="size"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getBreed" returnType="Breed" visibility="public"/>
+        <Method name="setBreed" returnType="void" visibility="public">
+          <Argument type="Breed" name="breed"/>
+        </Method>
+        <Method name="getAge" returnType="short" visibility="public"/>
+        <Method name="setAge" returnType="void" visibility="public">
+          <Argument type="short" name="age"/>
+        </Method>
+        <Method name="getSize" returnType="short" visibility="public"/>
+        <Method name="setSize" returnType="void" visibility="public">
+          <Argument type="short" name="size"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Person" package="domain" visibility="public" xPosition="681.0" yPosition="30.0">
+      <Fields>
+        <Field name="firstName" type="String" visibility="private"/>
+        <Field name="lastName" type="String" visibility="private"/>
+        <Field name="age" type="short" visibility="private"/>
+        <Field name="DNI" type="String" visibility="private"/>
+        <Field name="dog" type="Dog" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="lastName"/>
+          <Argument type="short" name="age"/>
+          <Argument type="String" name="DNI"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getFirstName" returnType="String" visibility="public"/>
+        <Method name="setFirstName" returnType="void" visibility="public">
+          <Argument type="String" name="firstName"/>
+        </Method>
+        <Method name="getLastName" returnType="String" visibility="public"/>
+        <Method name="setLastName" returnType="void" visibility="public">
+          <Argument type="String" name="lastName"/>
+        </Method>
+        <Method name="getAge" returnType="short" visibility="public"/>
+        <Method name="setAge" returnType="void" visibility="public">
+          <Argument type="short" name="age"/>
+        </Method>
+        <Method name="getDNI" returnType="String" visibility="public"/>
+        <Method name="setDNI" returnType="void" visibility="public">
+          <Argument type="String" name="DNI"/>
+        </Method>
+        <Method name="getDog" returnType="Dog" visibility="public"/>
+        <Method name="setDog" returnType="void" visibility="public">
+          <Argument type="Dog" name="dog"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Enum name="Breed" package="domain" visibility="public" xPosition="26.0" yPosition="221.0">
+      <Literals>
+        <Literal name="GREYHOUND"/>
+        <Literal name="COLLIE"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="breed" source="domain.Dog" target="domain.Breed" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="domain.Person" target="domain.Dog" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dog" source="domain.Person" target="domain.Dog" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="domain.Dog" target="domain.Breed" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
