@@ -1,0 +1,10 @@
+Realizar un programa para que una Persona pueda adoptar un Perro.
+
+Vamos a contar con dos clases:
+Perro, que tendrá como atributos: nombre, raza, edad y tamaño;
+Persona, con atributos: nombre, apellido, edad, documento y Perro.
+
+Ahora deberemos, en el método main crear dos Personas y dos Perros.
+Después, vamos a tener que pensar la lógica necesaria para asignarle
+a cada Persona un Perro y por último, mostrar desde
+la clase Persona, la información del Perro y de la Persona.
