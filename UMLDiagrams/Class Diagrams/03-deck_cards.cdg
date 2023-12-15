@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Card" package="domain" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="number" type="Type" visibility="private"/>
+        <Field name="figure" type="Figures" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Deck" package="domain" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="cards" type="Set&lt;Card&gt;" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Set&lt;Card&gt;" name="cards"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="cards" source="domain.Deck" target="domain.Card" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Set&lt;Card&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
