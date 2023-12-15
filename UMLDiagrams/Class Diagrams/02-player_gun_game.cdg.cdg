@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="domain">
+  <ClassDiagramComponents>
+    <Class name="Game" package="domain" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="players" type="ArrayList&lt;Player&gt;" visibility="private"/>
+        <Field name="waterGun" type="WaterGun" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="ArrayList&lt;Player&gt;" name="players"/>
+          <Argument type="WaterGun" name="waterGun"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setUp" returnType="void" visibility="package">
+          <Argument type="ArrayList&lt;Player&gt;" name="players"/>
+          <Argument type="WaterGun" name="waterGun"/>
+        </Method>
+        <Method name="play" returnType="void" visibility="package"/>
+        <Method name="getPlayers" returnType="ArrayList&lt;Player&gt;" visibility="public"/>
+        <Method name="setPlayers" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Player&gt;" name="players"/>
+        </Method>
+        <Method name="getWaterGun" returnType="WaterGun" visibility="public"/>
+        <Method name="setWaterGun" returnType="void" visibility="public">
+          <Argument type="WaterGun" name="waterGun"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Player" package="domain" visibility="public" xPosition="579.0" yPosition="367.0">
+      <Fields>
+        <Field name="Id" type="byte" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="wet" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="byte" name="id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="shoot" returnType="void" visibility="package">
+          <Argument type="WaterGun" name="waterGun"/>
+        </Method>
+        <Method name="getId" returnType="byte" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="byte" name="Id"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="isWet" returnType="boolean" visibility="public"/>
+        <Method name="setWet" returnType="void" visibility="public">
+          <Argument type="boolean" name="wet"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="WaterGun" package="domain" visibility="public" xPosition="960.0" yPosition="56.0">
+      <Fields>
+        <Field name="barrel" type="byte" visibility="private"/>
+        <Field name="water" type="byte" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="byte" name="barrel"/>
+          <Argument type="byte" name="water"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="fill" returnType="void" visibility="package"/>
+        <Method name="shoot" returnType="boolean" visibility="package"/>
+        <Method name="next" returnType="void" visibility="package"/>
+        <Method name="getBarrel" returnType="byte" visibility="public"/>
+        <Method name="setBarrel" returnType="void" visibility="public">
+          <Argument type="byte" name="barrel"/>
+        </Method>
+        <Method name="getWater" returnType="byte" visibility="public"/>
+        <Method name="setWater" returnType="void" visibility="public">
+          <Argument type="byte" name="water"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="domain.Game" target="domain.WaterGun" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="players" source="domain.Game" target="domain.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Player&gt;"/>
+    <UseRelation source="domain.Game" target="domain.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="waterGun" source="domain.Game" target="domain.WaterGun" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="domain.Player" target="domain.WaterGun" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
